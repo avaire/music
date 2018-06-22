@@ -47,7 +47,7 @@ public class HelpCommand extends Command {
     @Override
     public boolean onCommand(CommandMessage context, String[] args) {
         if (args.length == 0) {
-            return showCategories(context);
+            return showCategoryCommands(context, CategoryHandler.fromLazyName("music"), "music");
         }
 
         CommandContainer command = getCommand(context, args[0]);
@@ -56,23 +56,6 @@ public class HelpCommand extends Command {
         }
 
         return showCommand(context, command, args[0]);
-    }
-
-    private boolean showCategories(CommandMessage context) {
-        Category category = CategoryHandler.random(false);
-
-        String note = StringReplacementUtil.replaceAll(
-            context.i18n("categoriesNote",
-                category.getName().toLowerCase(),
-                category.getName().toLowerCase().substring(0, 3)
-            ), ":help", generateCommandTrigger()
-        );
-
-        context.makeInfo(getCategories(context) + note)
-            .setTitle(context.i18n("categoriesTitle"))
-            .queue();
-
-        return true;
     }
 
     private boolean showCategoryCommands(CommandMessage context, Category category, String categoryString) {
