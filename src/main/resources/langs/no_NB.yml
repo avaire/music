@@ -1,0 +1,171 @@
+
+errors:
+    missingArgument: 'Manglende argument, `{0}` argument er påkrevd!'
+    invalidProperty: 'Ugyldig `{0}` brukt, du må benytte en gyldig {1}.'
+    noChannelsWithNameOrId: 'Jeg fant ingen kanaler med navn eller ID `{0}`'
+    noUsersWithNameOrId: 'Jeg fant ingen brukere med navn eller ID `{0}`'
+    mustBeConnectedToVoice: 'Du må være tilkoblet ett samtale rom for og bruke denne kommandoen!'
+    mustBeConnectedToSameChannel: 'Du må være tilkoblet samme samtale rom som meg for og endre {0}!'
+    missingMusicQueue: 'Manglende musikk `query`, du må inkludere en lenke til sangen du ønsker og lytte til, eller gi meg i det minste en sang tittel!'
+    requireLevelFeatureToBeEnabled: 'Denne kommandoen krever at `Levels & Experience` fungsjonen er skrudd på for serveren, du kan spørre en admin om de ønsker og skru på fungsjonen `{0}`'
+    errorOccurredWhileLoading: 'En feil oppsto ved lasting av {0}, vennligst prøv igjen, om problemet vedvarer, vennligst kontakt en av mine utvikklere på [AvaIre support server](https://discord.gg/gt2FWER).'
+
+help:
+    HelpCommand:
+        listOfCommands: ':page_with_curl: **Liste med kommandoer** ```css\n{0}```\n'
+        commandNote: '**Skriv `:help <command>` for å se hjelpen for den spesifikke kommandoen.**\nEksempel: `:help :command`'
+        categoriesNote: ':information_source: Skriv `:help <category>` for og få opp en liste med kommandoer i den kategorien\nEksempel: `:help {0}` or `:help {1}`'
+        categoriesTitle: ':scroll: Kommando kategorier'
+        invalidCategory: 'Ugyldig kategori, ingen kategori er kalt `:category`'
+        invalidCommand: 'Ugyldig kommado, det er ingen kommando som har utløseren `:trigger`'
+        tryingToViewSystemCommands: "Du har ikke tilgang til å kjøre noen av kommandoene i `System` kategorien, system kommandoer kan påvirke alle serverene som botten kjører i, og er derfor beskyttet så kun administratore/utvikklere kan bruke dem."
+        singularHiddenCategories: '_Det er **{0}** gjemt kategori i denne kanalen._'
+        multipleHiddenCategories: '_Det er **{0}** gjemte kategorier i denne kanalen._'
+        fields:
+            usage: 'Bruksområde'
+            example: 'Eksempel'
+            aliases: 'Aliaser'
+            seeAlso: 'See Also'
+            footer: 'Kommando kategori: '
+
+music:
+    internal:
+        songWasSkipped: '[:title](:url) ønsket av :author ble hoppet over.'
+        nowPlayingSong: 'Spiller nå: [:title](:link)\n`:duration` med `:volume%` volum - Ønsket av :requester'
+        nowPlayingPlaylist: '**:playlistName** spillelisten har blit lagt til i kø med `:playlistSize` sanger!'
+        nowPlaying: 'Spiller nå: [:title](:link)\n`:duration` med `:volume%` volum - Ønsket av :requester'
+        queueHasEnded: 'Køen har nådd slutten, går ut av voice kanalen.'
+        noMatchFound: 'Jeg fant ingenting med søkeordet: `{0}`'
+        trackLoadFailed: "Jeg fikk ikke lastet inn: `{0}` i køen."
+        musicChannel: "Du kan kun benytte musikk kommandoer i :channel kanalen."
+
+    ClearQueueCommand:
+        error: 'Ingenting å fjerne, legg til sanger først med `{0}play`'
+        emptyQueue: 'Ingenting og fjerne, det er ingen sanger i køen akkurat nå.'
+        success: 'Jeg har fjernet **:queueSize** fra køen, køen er nå tom!'
+
+    MoveHereCommand:
+        error: 'Ikke koblet til voice, be meg legge til noe i køen først med `{0}play`'
+        nowPlayingIn: 'Jeg spiller nå av musikk i **:channelName**'
+
+    MusicChannelCommand:
+        updated: "**:type** musikk kanalen er suksessfult blitt :status"
+        field:
+            title: "Musikk kanaler"
+            message: "**Tekst kanaler:** :text\n**Samtale kanaler:** :voice"
+        status:
+            disabled: "avslått"
+            enabled: "satt til **{0}**"
+        errors:
+            invalidType: "Ugjyldig type av musikk kanal angitt, typen må enten være `tekst` eller `samtale`"
+            notValidType: "`{0}` er ikke en gyldig {1} kanal, du må inkludere en gyldig samtale kanal du ønsker og bruke som musikk kanal."
+
+    PauseCommand:
+        error: 'Ingenting å pause, be om musikk først med `{0}play`'
+        alreadyPaused: 'Musikken er allerede på pause, du kan benytte `!resume` for å fortsette avspillingen.'
+        paused: 'Musikken har blitt satt på `pause`'
+
+    PlayCommand:
+        addedSong: ':user har lagt til [:title](:url) i køen. Det er `:queueSize` sang(er) før den i køen.'
+        addedSongsFromPlaylist: ':user har lagt til :songs sanger fra [:title](:url) spillelisten i køen. Det er `:queueSize` sang(er) før den i køen.'
+        session:
+            title: 'Resultat for {0}'
+            footer: 'Velg en sang med {0} <nummer>'
+
+    PlaylistCommand:
+        noPlaylists: 'Denne serveren har ingen spillelister enda, du kan lage en med \n`:command` for å komme i gang'
+        noPlaylistWithName: 'Det er ingen spilleliste som heter `:playlist`, du kan lage en spilleliste ved å benytte\n`:command` kommandoen'
+        invalidProperty: 'Ugyldig `type` oppgitt, det er ingen spilleliste typer kalt `{0}`.\nDu kan lære mere ved og sende `{1}help {2}`'
+        invalidFormat: 'Ugyldig format, mangler `:type` typen!\n`:command`'
+        invalidIdGiven: 'Ugyldig id oppgitt, nummer oppgitt er for :type\n`:command`'
+        invalidIdNumberGiven: "Ugyldig id oppgitt, id'en må være ett nummer\n`:command`"
+        noMoreSongSlots: "`:playlist` spillelisten har ikke flere sang plasser igjen, du kan fjerne noen for og frigjøre plass."
+        noMorePlaylistSlots: "Serveren har ikke flere spilleliste plasser igjen, du kan slette en eksisterende spilleliste for og frigjøre plass."
+        failedToLoad: 'Feilet med og laste: {0}'
+        failedToLoadPlaylist: 'Feilet med og laste inn :playlist spillelisten, forsøk igjen senere eller rapporter dette til en av mine utviklere.'
+        failedToSavePlaylist: 'Noe gikk galt ved forsøkt på og lagre spillelisten: {0}'
+        loadedPlaylist: '**:name** spillelisten har blitt lastet og lagt til i køen med **:amount** sanger.'
+        noMatches: 'Ingen treff'
+        attemptingToAddLivestreamToPlaylist: "Du kan ikke legge til direkte sendte strømmer til spillelister!"
+        userHasAddedSong: ':user har lagt til [:name](:url) til `:playlist` spillelisten.\n`:playlist` spillelisten har `:slots` gjennværende plasser.'
+        alreadyExists: '`:playlist` spillelisten eksisterer allerede!'
+        onlyNumbersInName: "Spillelisten kan ikke kun inneholde tall, du må inkludere noen bokstaver i navnet!"
+        renamingPlaylistAlreadyExists: "Kan ikke endre navn på `:oldplaylist` til `:playlist`, det er allerede en spilleliste som heter `:playlist`"
+        playlistCreated: '`:playlist` spillelisten har blitt laget suksessfult!\nDu kan starte og legge til sanger med `:command :playlist add <sang>`'
+        playlistDeleted: '`:name` spillelisten har blitt slettet suksessfult!'
+        playlistRenamed: '`:oldplaylist` spillelisten har endret navn til `:playlist`!'
+        playlistIsEmpty: 'Det er ingen sanger i denne spillelisten, du kan legge til sanger ved og benytte kommandoen\n`:command`.'
+        playlistIsAlreadyEmpty: '`:playlist` spillelisten er allerede tom, det er intet her og fjerne.'
+        songHasBeenRemovedFromPlaylist: ':song har blitt suksessfult fjernet fra `:playlist` spillelisten'
+        playlistTitle: ':musical_note: Musikk spillelister {0}'
+        playlistSize: '[ {0} ut av {1} ]'
+        playlistLine: '{0}\n       Spillelisten har **{1}** sang(er)'
+        playlistSongLine: '`{0}` [{1}]({2}) [{3}]'
+
+    RemoveSongFromQueueCommand:
+        error: "Manglende argument `sang id`, du må inkludere ID'en til sangen du ønsker og fjerne."
+        failedToRemoveSong: 'Noe gikk galt, feilet med og fjerne sang med indeks `:index`'
+        tooHighNumberGiven: 'Det er kun `{0}` sanger i køen, forsøk med ett lavere tall.'
+        mustBePositiveNumber: '`Sang ID` må være ett gyldig positivt tall.'
+        nothingToRemove: 'Ingenting og fjerne, etterspør musikk først med `{0}play`'
+        success: ':song har blitt suksessfult fjernet fra musikk køen.'
+
+    RepeatMusicQueueCommand:
+        error: 'Det er ingenting og gjennta, etterspør musikk først med `{0}play`'
+        success: 'Musikk kø looping er blitt skrudd `:status`.'
+        enabled: 'PÅ'
+        disabled: 'AV'
+
+    ResumeCommand:
+        error: 'Ingenting og gjennoppta, etterspør musikk først med `{0}play`'
+        alreadyPlaying: 'Musikken spiller allerede, benytt `:prefixpause` for og pause musikken.'
+        resume: 'Musikken har `gjenopptatt`'
+
+    SeekCommand:
+        error: 'Ingenting spiller akkurat nå, etterspør noe med `{0}play` først.'
+        invalidTimeGiven: '`Nummer` argumentet må være ett gyldig tall format som er minst 0 eller flere sekunder langt.'
+        seekingLive: 'Du kan ikke hoppe til en annen tidskode av en direkte sendt strøm.'
+        seekingTooFar: '`{0}` er mere enn den totale lengden av sangen som spilles, om du ønsker og hoppe over sangen, benytt `{0}skip` istedenfor.'
+        seekTo: 'Spoler **:title** til `:time`'
+
+    SetDefaultVolumeCommand:
+        currentVolume: 'Standard volumet for serveren er forøyeblikket `:volume%`'
+        changedVolume: 'Standard volumet har blitt satt til `:volume%`'
+        failedToSave: 'Noe gikk galt når jeg prøvde og oppdatere standard volumet: {0}'
+        mustBeNumber: '`Volumet` må være ett nummer mellom 10 og 100'
+
+    ShuffleCommand:
+        error: 'Musikk køen er allerede tom, du kan etterspøre noe med\n`{0}play <sang tittel | url>`'
+        success: '**:amount** sanger har blitt stokket i køen.'
+
+    SkipCommand:
+        error: 'Ingenting og hoppe over, etterspør musikk først med `{0}play`'
+
+    SongCommand:
+        error: 'Ingenting og spille, etterspør musikk med `{0}play`'
+        paused: 'Er nå pauset'
+        playing: 'Spiller nå'
+        songsInQueue: 'Sanger i køen'
+        moreSongs: 'Du kan se flere sanger ved og benytte {0} <page>'
+        noSongs: 'Det er ingen andre sanger i køen akkurat nå'
+        andXMoreSongs: '_Og **{0}** flere sanger{1}!_'
+        formats:
+            line: '**{0}** [{1}]({2})'
+            song: '[{0}]({1})\nSpiller med `{2}` volum hvorav `{3}` er igjen av sangen - Foreslått av <@{4}>'
+            stream: '[{0}]({1})\nSpiller med `{2}` volum, strømmen er kommet til `{3}` - Foreslått av <@{4}>'
+
+    StopCommand:
+        error: "Ingenting spiller akkurat nå, du kan ikke stoppe musikken når ingenting spilles av."
+        success: 'Spilleren har stoppet, og **:number** sanger har blitt fjernet fra køen.'
+
+    VolumeCommand:
+        error: 'Ingenting spiller, etterspør musikk først med `{0}play`'
+        requireDJRole: '`DJ` er påkrevd for og endre volumet!'
+        invalidVolume: 'Ugyldig volum oppgitt, volumet må være ett gyldig nummer mellom 1 og 100.'
+        nowPlaying: ':musical_note: Musikken spilles med **:volume** volum'
+        setTo: ':musical_note: Volumet er satt til **:volume**'
+
+    VoteSkipCommand:
+        error: 'Ingenting og hoppeover, etterspør musikk først med `{0}play`'
+        registered: 'Din stemme har blitt motatt! `:votes` flere stemmer trengs for og hoppe over sangen.'
+        alreadyVoted: 'Du kan kun stemme for og hoppeover en gang per sang! `:votes` flere stemmer trengs for og hoppe over sangen.'

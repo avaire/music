@@ -1,0 +1,171 @@
+
+errors:
+    missingArgument: 'Fehlendes Argument. Das `{0}` Argument wird vorausgesetzt.'
+    invalidProperty: 'Ungültige `{0}` angegeben. Eine gültige {1} wird vorausgesetzt.'
+    noChannelsWithNameOrId: 'Ich habe keine Channel unter dem Namen oder der ID `{0}` auffinden können.'
+    noUsersWithNameOrId: 'Ich habe keine User unter dem Namen oder der ID `{0}` auffinden können.'
+    mustBeConnectedToVoice: 'Du musst mit einem Voicechannel verbunden sein, um diesen Befehl ausführen zu können!'
+    mustBeConnectedToSameChannel: 'Du musst im selben Voicechannel verbunden sein, um folgenden Befehl ausführen zu können: {0}!'
+    missingMusicQueue: 'Fehlende Music `query`. Du musst einen Link zu einem Song angeben, den du dir anhören möchtest. Du kannst mir auch gern den Musiktitel geben.'
+    requireLevelFeatureToBeEnabled: 'Dieser Befehl benötigt das `Levels & Experience` Feature. Du kannst den Server-Administrator anfragen, ob dieser damit einverstanden ist diesen mit folgendem Befehl zu aktivieren: `{0}`'
+    errorOccurredWhileLoading: 'Ein Fehler ist beim Laden von {0} aufgetreten. Bitte versuche es später erneut. Sollte dieser Fehler erneut auftreten, so kontaktiere eines unserer Entwickler auf dem [AvaIre Support Server] [https://discord.gg/gt2FWER].'
+
+help:
+    HelpCommand:
+        listOfCommands: ':page_with_curl: **Liste von Befehlen** ```css\n{0}```\n'
+        commandNote: '**Schreibe `:help <command>`, um Hilfe für den spezifischen Befehl anzeigen zu lassen.**\nBeispiel: `:help :command`'
+        categoriesNote: ':information_source: Schreibe `:help <category>`, um eine Liste von Befehlen für diese Kategorie anzeigen zu lassen.\nBeispiel: `:help {0}` oder `:help {1}`'
+        categoriesTitle: ':scroll: Befehls-Kategorien'
+        invalidCategory: 'Ungültige Befehls-Kategorie angegeben. Es existieren keine Kategorien unter dem Namen `:category`.'
+        invalidCommand: 'Ungültigen Befehl eingegeben. Es existiert kein Befehl unter folgendem Trigger: `:trigger`'
+        tryingToViewSystemCommands: "Du hast keine Berechtigung dazu, jegliche Befehle aus der `System`-Kategorie auszuführen. System-Befehle betreffen alle Server auf die der Bot derzeit eingesetzt wird. Diese Art von Befehlen sind nur für Administatoren oder Entwickler zugünglich."
+        singularHiddenCategories: '_Es existiert **{0}** versteckte Kategorie für diesen Channel._'
+        multipleHiddenCategories: '_Es existieren **{0}** versteckte Kategorien für diesen Channel._'
+        fields:
+            usage: 'Verwendung'
+            example: 'Beispiel'
+            aliases: 'Alias'
+            seeAlso: 'Siehe auch'
+            footer: 'Befehls-Kategorie: '
+
+music:
+    internal:
+        songWasSkipped: '[:title](:url), angefragt von :author wurde übersprungen.'
+        nowPlayingSong: 'Spielt jetzt: [:title](:link)\n`:duration` mit einer Lautstärke von `:volume%` - Angefragt von :requester'
+        nowPlayingPlaylist: 'Die **:playlistName** Playlist wurde zur Warteschlange hinzugefügt. Diese beinhaltet `:playlistSize` Songs!'
+        nowPlaying: 'Spielt jetzt: [:title](:link)\n`:duration` mit einer Lautstärke von `:volume%` - Angefragt von :requester'
+        queueHasEnded: 'Die Warteschlange ist leer. Voicechannel wird verlassen.'
+        noMatchFound: "Ich habe nicht's mit der folgenden Eingabe gefunden: `{0}`"
+        trackLoadFailed: "Ich war nicht in der Lage folgenden Titel in die Warteschlange zu setzen: `{0}`"
+        musicChannel: "Du kannst Musik-Befehle nur im :channel Channel nutzen."
+
+    ClearQueueCommand:
+        error: "Nicht's zum Leeren vorhanden. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        emptyQueue: "Nicht's zum Leeren vorhanden. Es befinden sich keine ausstehenden Songs in der Warteschlange."
+        success: 'Ich habe **:queueSize** Songs aus der Warteschlange entfernt. Die Warteschlange ist nun leer.'
+
+    MoveHereCommand:
+        error: 'Nicht mit dem Voicechannel verbunden. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`'
+        nowPlayingIn: 'Ich spiele nun Musik im folgendem Channel: **:channelName**'
+
+    MusicChannelCommand:
+        updated: "Der **:type** Musikchannel wurde erfolgreich :status"
+        field:
+            title: "Musik-Channel"
+            message: "**Text-Channel:** :text\n**Voice-Channel:** :voice"
+        status:
+            disabled: "deaktiviert"
+            enabled: "gesetzt zu **{0}**"
+        errors:
+            invalidType: "Ungültigen Typ vom Musikchannel angegeben. Folgende Typen sind verfügbar: `text`, `voice`"
+            notValidType: "`{0}` ist kein gültiger {1} Channel. Du musst einen gültigen Voicechannel angeben, den du als Musikchannel nutzen möchtest."
+
+    PauseCommand:
+        error: "Nicht's zum Pausieren vorhanden. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        alreadyPaused: 'Die Musik ist bereits pausiert. Nutze `!resume`, um mit der Musik fortzufahren.'
+        paused: 'Die Musik wurde `pausiert`.'
+
+    PlayCommand:
+        addedSong: ':user hat [:title](:url) zur Warteschlange hinzugefügt. Derzeit sind `:queueSize` Song[s] in der Warteschlange.'
+        addedSongsFromPlaylist: ':user hat :songs Song[s] von der [:title](:url) Playlist zur Warteschlange hinzugefügt. Derzeit sind `:queueSize` Song[s] in der Warteschlange.'
+        session:
+            title: 'Ergebnisse für {0}'
+            footer: 'Wähle einen Song mit folgendem Befehl aus: {0} <Nummer>'
+
+    PlaylistCommand:
+        noPlaylists: "Dieser Server hat derzeit keine Music-Playlisten. Du kannst einen mit folgendem Befehl erstellen: \n`:command`"
+        noPlaylistWithName: 'Es existiert keine Playlist unter dem Namen `:playlist`. Du kannst einen mit folgendem Befehl erstellen: \n`:command`'
+        invalidProperty: 'Ungültige `property` angegeben. Es existieren keine Playlist-Eigenschaften namens `{0}`.\nDu kannst mit folgendem Befehl mehr erfahren: `{1}help {2}`'
+        invalidFormat: 'Ungültiges Format. Es fehlt die `:type` Eigenschaft!\n`:command`'
+        invalidIdGiven: 'Ungültige ID angegeben. Die angegebene Nummer ist zu :type\n`:command`'
+        invalidIdNumberGiven: 'Ungültige ID angegeben. Die ID muss eine Nummer sein\n`:command`'
+        noMoreSongSlots: "Die `:playlist` Playlist hat keine weiteren Songslots."
+        noMorePlaylistSlots: "Der Server hat keine weiteren Playlist-Slots. Du kannst bereits existierende Playlisten löschen um wieder Slots zu erhalten."
+        failedToLoad: 'Fehler beim Laden: {0}'
+        failedToLoadPlaylist: 'Fehler beim Laden der :playlist Playlist. Bitte versuche dies später erneut, oder kontaktiere eines unserer Entwickler.'
+        failedToSavePlaylist: 'Es ist ein Fehler aufgetreten beim Versuch folgende Playlist zu speichern: {0}'
+        loadedPlaylist: 'Die **:name** Playlist wurde geladen und erfolgreich zur Warteschlange hinzugefügt. Diese beinhaltet nun **:amount** Songs.'
+        noMatches: 'Keine Ergebnisse'
+        attemptingToAddLivestreamToPlaylist: "Du kannst keine Livestreams in die Playlist hinzufügen!"
+        userHasAddedSong: ':user hat [:name](:url) zu der `:playlist` Playlist hinzugefügt.\nDie `:playlist` Playlist hat `:slots` weitere Song-Slots verfügbar.'
+        alreadyExists: 'Die `:playlist` Playlist existiert bereits!'
+        onlyNumbersInName: "Die Playlist kann nicht nur Nummern beinhalten. Du musst einige Buchstaben zum Namen hinzufügen!"
+        renamingPlaylistAlreadyExists: "Ich kann die `:oldplaylist` nicht zu folgendem Namen umbenennen: `:playlist`. Es existiert bereits eine andere Playlist unter dem Namen `:playlist`."
+        playlistCreated: 'Die `:playlist` Playlist wurde erfolgreich erstellt.\nUm Songs zur Playlist hinzuzufügen, nutze hierzu folgenden Befehl: `:command :playlist add <Song>`'
+        playlistDeleted: 'Die `:name` Playlist wurde erfolgreich gelöscht!'
+        playlistRenamed: 'Die `:oldplaylist` Playlist wurde erfolgreich umbenannt zu: `:playlist`'
+        playlistIsEmpty: 'Es befinden sich keine weiteren Songs in der Playlist. Um Songs zur Playlist hinzuzufügen, nutze hierzu folgenden Befehl:\n`:command`'
+        playlistIsAlreadyEmpty: "Die `:playlist` Playlist ist bereits leer. Es befindet sich nicht's zum Entfernen."
+        songHasBeenRemovedFromPlaylist: ':song wurde erfolgreich von der `:playlist` Playlist entfernt.'
+        playlistTitle: ':musical_note: Musik-Playlist {0}'
+        playlistSize: '[ {0} aus {1} ]'
+        playlistLine: '{0}\n       Playlist hat **{1}** Song[s]'
+        playlistSongLine: '`{0}` [{1}]({2}) [{3}]'
+
+    RemoveSongFromQueueCommand:
+        error: 'Fehlendes Argument, `Song ID`. Du musst die ID von dem Song angeben, dass du von der Warteschlange entfernen möchtest.'
+        failedToRemoveSong: 'Es ist ein Fehler aufgetreten beim Versuch einen Song auf dem Index `:index` zu entfernen.'
+        tooHighNumberGiven: 'Es befinden sich nur `{0}` Song[s] in der Warteschlange. Versuche die Nummer etwas herunter zu senken.'
+        mustBePositiveNumber: 'Die `Song ID` muss eine gültige, positive Nummer sein.'
+        nothingToRemove: "Nicht's zum Entfernen. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        success: ':song wurde erfolgreich von der Warteschlange entfernt.'
+
+    RepeatMusicQueueCommand:
+        error: "Nicht's zum Wiederholen vorhanden. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        success: 'Das Wiederholen von der Musik-Warteschlange ist nun `:status`.'
+        enabled: 'EINGESCHALTET'
+        disabled: 'AUSGESCHALTET'
+
+    ResumeCommand:
+        error: "Nicht's zum Fortsetzen vorhanden. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        alreadyPlaying: 'Es wird bereits Musik abgespielt. Nutze `:prefixpause`, um die Musik zu pausieren.'
+        resume: 'Die Musik wird nun `fortgesetzt`.'
+
+    SeekCommand:
+        error: "Derzeit wird nicht's abgespielt, Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        invalidTimeGiven: 'Das `Nummer`-Argument muss einen richigen Zeitformat beinhalten. Dieser muss wenigstens 0 Sekunden lang sein.'
+        seekingLive: 'Du kannst nicht für Livestreams zu einer anderen Zeit springen.'
+        seekingTooFar: '`{0}` ist mehr als die eigentliche Länge vom derzeitigen Song. Falls du den Song überspringen möchtest, so nutze bitte folgenden Befehl: `{1}skip`'
+        seekTo: 'Ich springe im Song **:title** zu `:time`.'
+
+    SetDefaultVolumeCommand:
+        currentVolume: 'Die Standard-Lautstärke für diesen Server ist derzeit auf `:volume%` gesetzt.'
+        changedVolume: 'Die Standard-Lautstärke wurde auf `:volume%` gesetzt.'
+        failedToSave: 'Es ist ein Fehler aufgetreten beim Versuch folgende Standard-Lautstärke zu speichern: {0}'
+        mustBeNumber: 'Die `Lautstärke` muss eine Nummer zwischen 10 und 100 sein.'
+
+    ShuffleCommand:
+        error: 'Die Warteschlange ist bereits leer. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl:\n`{0}play <Songtitel | URL>`'
+        success: '**:amount** Song[s] wurden in der Warteschlange vermischt.'
+
+    SkipCommand:
+        error: "Nicht's zum Überspringen. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+
+    SongCommand:
+        error: "Nicht's zum Anzeigen. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        paused: 'Derzeit pausiert'
+        playing: 'Derzeit am Spielen'
+        songsInQueue: 'Songs in der Warteschlange'
+        moreSongs: 'Du kannst mehr Songs mit folgendem Befehl anzeigen lassen: {0} <Seite>'
+        noSongs: 'Es befinden sich keine weiteren Songs in der Warteschlange.'
+        andXMoreSongs: '_Und **{0}** weitere Song{1}!_'
+        formats:
+            line: '**{0}** [{1}]({2})'
+            song: '[{0}]({1})\nSpielt mit der Lautstärke von `{2}` mit `{3}` verbleibender Zeit vom Song - Angefragt von <@{4}>'
+            stream: '[{0}]({1})\nSpielt mit der Lautstärke von `{2}`. Der Stream ist `{3}` - Angefragt von <@{4}>'
+
+    StopCommand:
+        error: "Derzeit wird nicht's abgespielt. Du kannst keine Musik stoppen, wenn keine Musik läuft."
+        success: 'Die Musik-Wiedergabe wurde gestoppt und **:number** Song[s] wurden von der Warteschlange entfernt.'
+
+    VolumeCommand:
+        error: "Derzeit wird nicht's abgespielt. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        requireDJRole: 'Die `DJ`-Rolle wird benötigt um die Lautstürke zu ändern.'
+        invalidVolume: 'Ungültige Lautstärke angegeben. Die Lautstärke muss eine Zahl zwischen 1 und 100 beinhalten.'
+        nowPlaying: ':musical_note: Musik wird mit einer Lautstärke von **:volume** abgespielt.'
+        setTo: ':musical_note: Lautstärke zu **:volume** gesetzt.'
+
+    VoteSkipCommand:
+        error: "Nicht's zum Überspringen. Anfragen von Musik ist vorausgesetzt. Tue dies bitte zuerst mit folgendem Befehl: `{0}play`"
+        registered: 'Deine Abstimmung wurde registriert! `:votes` weitere Abstimmungen werden benötigt, um den Song überspringen zu können.'
+        alreadyVoted: 'Du kannst nur ein Mal per Song zum Überspringen abstimmen! `:votes` weitere Abstimmungen werden benötigt, um den Song überspringen zu können.'

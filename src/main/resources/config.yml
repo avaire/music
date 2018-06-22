@@ -1,0 +1,351 @@
+
+#--------------------------------------------------------------------------
+# Welcome to the AvaIre Configuration
+#--------------------------------------------------------------------------
+#
+# Below you'll find all the configurable options for Ava, if you're using
+# a plugin that you want to configure, you should look for a config file
+# in the "plugins/plugin name" folder.
+#
+# The configuration is written in a format known as YAML, you can learn
+# more about the format at https://learnxinyminutes.com/docs/yaml
+#
+# Need to validate if the config has no errors and will pass Avas config
+# management system? Try out https://codebeautify.org/yaml-validator
+#
+# Got any questions? Contact the development team on the official support
+# server for Ava at https://avairebot.com/support
+#
+
+#--------------------------------------------------------------------------
+# Application Environment
+#--------------------------------------------------------------------------
+#
+# The application environment determines what is logged to the console, and
+# what applications are loaded, this is to give a better user experience
+# since having the console flooded with information can be very
+# overwhelming if you don't know what you're looking at.
+#
+# AvaIre supports two different environments, "production" and "development"
+#
+# Production is used for minimal console output and for all parts of the
+# application to be enabled. Development is used for debugging messages
+# and preventing some parts of the application from running, to stop
+# in-development changes from ruining the production environment.
+#
+
+environment: 'production'
+
+#--------------------------------------------------------------------------
+# Discord Application Information
+#--------------------------------------------------------------------------
+#
+# Discord application information is things like your application token,
+# application id, application secret, etc. To run a Discord bot you'll
+# need an application token, if you don't already have an application
+# with discord you can easily create one in two minutes.
+#
+# Start by going to the link below, create a new application, give it some
+# name, then click on "Create a Bot User", and you're good to go!
+# https://discordapp.com/developers/applications/me
+#
+# AvaIre needs your Discord application token to login and interact with
+# users, and optionally the application ID for handling music using
+# Lavalink instead of doing it internally, you can also use the
+# application ID to create a invite link for your bot.
+#
+
+discord:
+
+  # This is your Discord application client id, if you don't have a Discord
+  # application, check the link above and follow the short guide to
+  # create one, once you have it, replace the text between the
+  # quotes with your client id.
+  #
+  clientId: 'YouBotClientIdShouldGoHere'
+
+  # This is your Discord application token, if you don't have a Discord
+  # application, check the link above and follow the short guide to
+  # create one, once you have it, replace the text between the
+  # quotes with your token.
+  #
+  token: 'YourBotTokenShouldGoHere'
+
+  # This is the OAuth2 URL used for invite links, you should replace
+  # the "<client_id>" with your Discord application client ID to
+  # make the link valid so people can actually use it to invite
+  # your bot to their server.
+  #
+  oauth: 'https://discordapp.com/oauth2/authorize?&client_id=<client_id>&scope=bot&permissions=66186303'
+
+#--------------------------------------------------------------------------
+# Database Information
+#--------------------------------------------------------------------------
+#
+# AvaIre uses a database for storing things like custom prefixes, playlists,
+# user XP and levels, statistics, autoroles, aliases and everything else.
+#
+# AvaIre currently supports MySQL and SQLite database types, with support for
+# more types coming in the future, to get started simply just populate the
+# fields below with your database login information.
+#
+# Note: When using a MySQL database make sure the database user has permission
+# to create, delete and edit tables in the database you want to use, Ava uses
+# a migration system that will create all the needed tables, and roll out
+# changes between versions automatically, this require creating new
+# tables, and editing and deleting existing tables.
+#
+
+database:
+
+  # This is the database type that Ava should use, "MySQL" is used by default however
+  # it can be changed to "SQLite" if you'd like to use a flatfile database instead.
+  #
+  type: 'mysql'
+
+  #------------------------------------------------------------------------
+  # SQLite Settings
+  #------------------------------------------------------------------------
+  #
+  # Ths is the SQLite settings used in Ava, by default MySQL is used so if
+  # you want to use the SQLite setup, change the "type" value above to
+  # SQLite and you should be good to go!
+  #
+  # SQLite does not require any external software to be installed to use it.
+  #
+
+  # This is the name of the flatfile used for the SQLite database, although
+  # SQLite has support for in-memory databases, Ava does not yet support
+  # them, if you just want to try using SQLite you should be fine
+  # leaving the value as "database.sqlite"
+  #
+  filename: 'database.sqlite'
+
+  #------------------------------------------------------------------------
+  # MySQL Settings (Recommended)
+  #------------------------------------------------------------------------
+  #
+  # This is the MySQL settings used in Ava, MySQL is used by default and is
+  # recommend for use in general as it's more stable and has more features
+  # than SQLite. You must install a MySQL server to use the MySQL database
+  # settings, if you're on hosting the bot on a VPS, using the default
+  # "mysql-server" package should be fine, if you're on Windows/Mac,
+  # using something like XAMPP is a great alternative.
+  #
+  # XAMPP Website: https://www.apachefriends.org/index.html
+  #
+
+  # This is the name of the database that Ava should use for all tables.
+  #
+  database: 'avaire'
+
+  # This is the hostname of the database, if you're hosting the database on
+  # the same machine the bot is also hosted on you should be fine keeping
+  # it as "localhost", if you're using an external server for database
+  # hosting you could use the IP address here.
+  #
+  hostname: 'localhost'
+
+  # This is the username for the user that should be used by Ava to access
+  # the database, the user should have permission to create, read,
+  # update and delete tables in order for Ava to work correctly.
+  #
+  username: 'username'
+
+  # The password for the database user, used to access the database.
+  #
+  password: 'password'
+
+#--------------------------------------------------------------------------
+# Default Command Prefix
+#--------------------------------------------------------------------------
+#
+# All internal commands registered with Ava will be linked to a command
+# category, each category has a default prefix which are used for all
+# commands linked to that category, below you can set the default
+# prefix used by all the official AvaIre command categories.
+#
+# Note: Plugins that adds commands and categories to the Ava registry doesn't
+# necessarily have to follow the default prefix set below, check in with the
+# developer for the plugin about the command prefix if one is used, or just
+# change the prefix for the category using the "Change Prefix" command.
+#
+
+default-prefix: '!'
+
+#--------------------------------------------------------------------------
+# Bot Status
+#--------------------------------------------------------------------------
+#
+# Once every minute, Ava will change her "playing" status to something on
+# the list below, you can define what type of status it is by prefixing
+# the status with one of the options below.
+#
+#   "watching:something" This produces "Watching something"
+#   "listening:some cool music" This produces "Listening to some cool music"
+#   "streaming:video games" This produces "Streaming video games"
+#
+# If no prefix is given the playing status type will be used instead.
+#
+
+playing:
+  - '!help'
+
+#--------------------------------------------------------------------------
+# Music Lavalink Nodes (Advanced Music Settings)
+#--------------------------------------------------------------------------
+#
+# Lavalink is used internally in Ava to delegate sending and encoding jobs,
+# using Lavalink makes it easy to provided good quality music to everyone
+# around the world at the same time by spreading the needed resources
+# for streaming music out to external encoding nodes.
+#
+# Lavalink is NOT a requirement to use the music features in Ava, it's
+# simply an alternative way to deliver the end result to the user,
+# for more information about Lavalink checkout:
+#
+# https://github.com/Frederikam/Lavalink
+#
+
+lavalink:
+
+  # This determines if Ava should use Lavalink for encoding and sending the
+  # audio instead of doing it internally, if Lavalink is enabled and no
+  # valid nodes has been provided, none of the music will work.
+  #
+  enabled: false
+
+  # This is your Lavalink encoding nodes, each node must have a valid name
+  # that the node is identified by, a valid web-socket host and port,
+  # and a valid password for the given Lavalink node.
+  #
+  # If a encoding node is closed, all music that is streamed through the node
+  # will stop and the load-balancer built into Lavalink will begin to
+  # spread the load out to the remaining working nodes.
+  #
+  nodes:
+    - name : "local"
+      host : "ws://localhost:5555"
+      pass : "youshallnotpass"
+    - name : "remote1"
+      host : "ws://192.168.1.20:5556"
+      pass : "youshallnotpass"
+    - name : "remote2"
+      host : "ws://lavalink.example.com:5557"
+      pass : "youshallnotpass"
+
+#--------------------------------------------------------------------------
+# Music Activity Settings
+#--------------------------------------------------------------------------
+#
+# Music Activity is a tracking system built into Ava that disconnects the
+# bot from voice channels if no one is listening to music anyway, this
+# can help free up memory and bandwidth that wasn't being used to
+# serve users anyway.
+#
+# The music activity tracks a few things:
+#
+#   1. When no one is listening to the music, like when the bot is muted,
+#   everyone is deafened, or no one is in the voice channel with the bot.
+#
+#   2. If the queue is empty, when you request a song by name the queue
+#   will be empty until the user selects the song they want to be
+#   played, this applies here, if the last song in the queue is
+#   playing it will disconnect once the song is done anyway.
+#
+#   3. If the music is paused, this should be self-explanatory, if you
+#   pause the music the bot it will disconnect after awhile unless
+#   it is unpaused(resumed).
+#
+
+music-activity:
+
+  # This determines if the music activity tracker should be enabled or not,
+  # if set to false all the values below will never be used and the bot
+  # will stay connect to voice channels regardless of time, until the
+  # queue is either empty of it is forced to leave by a user.
+  #
+  enabled: true
+
+  # This is the time in minutes that the bot should wait before disconnecting
+  # if no one is listening to the bot.
+  #
+  # Note: Other bots does not count as valid listeners.
+  #
+  missing-listeners: 5
+
+  # This is the time in minutes that the bot should wait before disconnecting
+  # if the queue is empty and nothing is added before the timer runs out.
+  #
+  empty-queue-timeout: 2
+
+  # This is the time in minutes that the bot should wait before disconnecting
+  # if the music is paused.
+  #
+  paused-music-timeout: 10
+
+#--------------------------------------------------------------------------
+# Audio Encoding and Resampling Quality
+#--------------------------------------------------------------------------
+#
+# Audio encoding and audio resampling is a way to control the quality of
+# audio the bot will deliver for music related commands.
+#
+# Lower encoding and resampling will use less memory and CPU, but will also
+# produce worse audio quality in the end, while higher encoding and
+# resampling will use more memory and CPU but will in turn produce
+# more clear and "crisp" audio.
+#
+
+audio-quality:
+
+    # Audio resampling is tasked with sending the data from the server the bot
+    # is hosted on to the Discord servers so people can listen to the music.
+    #
+    # Higher resampling rates gives a higher chance that the audio reaches
+    # Discord servers so people can hear the audio by sending each frame
+    # multiple times, higher resampling uses more CPU since it has to
+    # send each frame multiple times.
+    #
+    # The supported resampling qualities are:
+    #     "high", "medium", and "low"
+    #
+    resampling: 'medium'
+
+    # Audio encoding is tasked with encoding the audio track so it is playable by
+    # Discord, higher values will produce a higher quality encoded track, which
+    # in turn uses more CPU, while lower values will produce a worse quality
+    # audio track but ues less CPU to do so.
+    #
+    # The encoding value must be a number between 0 and 10.
+    #
+    encoding: 10
+
+#--------------------------------------------------------------------------
+# Bot Access (Bot Administrators)
+#--------------------------------------------------------------------------
+#
+# The list below should contain a list of user IDs of people you want to be
+# able to access all system commands for Ava, things like restarting,
+# system information, code evaluation, etc.
+#
+# You can find your user ID by using the .userid command in Ava.
+#
+
+botAccess:
+  - '88739639380172800'
+
+#--------------------------------------------------------------------------
+# Sentry.io Error Logging
+#--------------------------------------------------------------------------
+#
+# Sentry.io is an open source error tracking service, it can provide a lot
+# of helpful information to developers on what is going wrong, and where
+# in real-time, Sentry.io uses a DSN url for establishing a link
+# between the bot and their service, you can enter your DSN
+# url below if yo want to enable Sentry.io error logging.
+#
+# To learn more, checkout: https://sentry.io/welcome/
+#
+
+sentryDsn: ''

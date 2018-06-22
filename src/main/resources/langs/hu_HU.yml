@@ -1,0 +1,170 @@
+
+errors:
+    missingArgument: 'Hiányzó paraméter, a `{0}` paraméter szükséges!'
+    invalidProperty: 'Hibás `{0}` biztosítva, érvényes {1}-t kell biztosítanod.'
+    noChannelsWithNameOrId: 'Nem találtam channelt e név, vagy ID-vel: `{0}`'
+    noUsersWithNameOrId: 'Nem találtam felhasználót e név, vagy ID-vel: `{0}`'
+    mustBeConnectedToVoice: 'Csatlakozva kell lenned egy szobához, hogy használd ezt a parancsot!'
+    mustBeConnectedToSameChannel: 'Ugyan ahhoz a szobához kell csatlakozva lenned mint én, hogy: {0}!'
+    missingMusicQueue: 'Hiányzó zene `szám`, egy linket kell küldened a számhoz amit hallgatnál, vagy legalább add meg a címét!'
+    requireLevelFeatureToBeEnabled: 'Ez a parancs megköveteli a `Levels & Experience` funkciót, hogy be legyen kapcsolva a szerveren. Megkérdheted a szerver tulajdonost, hogy be akarják-e kapcsolni a `{0}`-vel'
+    errorOccurredWhileLoading: 'Hiba lépett fel a {0} betöltése közben, kérlek próbáld újra, ha a hiba továbbra is fennáll kérlek jelentsd ezt az egyik fejlesztőmnek az [AvaIre support server](https://discord.gg/gt2FWER)-en.'
+
+help:
+    HelpCommand:
+        listOfCommands: ':page_with_curl: **List of Commands** ```css\n{0}```\n'
+        commandNote: '**Írd be a `:help <parancs>`, hogy lásd a segítséget ahhoz az adott parancshoz.**\nPéldául: `:help :command`'
+        categoriesNote: ':information_source: Írd be: `:help <category>` hogy megtudd a parancsok listáját abban a kategóriában.\nPéldául: `:help {0}` vagy `:help {1}`'
+        categoriesTitle: ':scroll: Parancs Kategóriák'
+        invalidCategory: 'Érvénytelen parancs kategória megadva, nincs ilyen kategória: `:category`'
+        invalidCommand: 'Érvénytelen parancs adva, nincs olyan parancs ami ezt használná: `:trigger`'
+        tryingToViewSystemCommands: "Nincs jogod, hogy bármilyen parancsot használj a `System` kategóriában, a rendszer parancsok befolyásolhatják az összes szervert ahol a bot jelenleg fut, ezért limitálva van a bot adminok illetve fejlesztőknek."
+        singularHiddenCategories: '_**{0}** rejtett kategória van ehhez a channelhez._'
+        multipleHiddenCategories: '_**{0}** rejtett kategóriák vannak ehhez a channelhez._'
+        fields:
+            usage: 'Használat'
+            example: 'Példa'
+            aliases: 'Álnevek'
+            seeAlso: 'See Also'
+            footer: 'Parancs kategória: '
+
+music:
+    internal:
+        songWasSkipped: '[:title](:url) kérve :author álltal át lett ugorva.'
+        nowPlayingSong: 'Most játszott: [:title](:link)\n`:duration`, `:volume%` hangerővel - Kérte: :requester'
+        nowPlayingPlaylist: 'A **:playlistName** lejátszási lista hozzá lett téve a listához `:playlistSize` számmal!'
+        nowPlaying: 'Most játszott: [:title](:link)\n`:duration`, `:volume%` hangerővel - Kérte :requester'
+        queueHasEnded: 'A lejátszási listának vége, kilépés hangból.'
+        noMatchFound: 'Nem találtam semmit a megadott feltétellel: `{0}`'
+        trackLoadFailed: "Nem tudom hozzá adni a listához: `{0}`"
+        musicChannel: "Csak zene parancsokat használhatsz a :channel channelben."
+
+    ClearQueueCommand:
+        error: 'Nincs semmi amit törölni lehetne, előbb kérj zenét a `{0}play` parancsal'
+        emptyQueue: 'Nincs semmi amit törölni lehetne, nincs várakozó szám a lejátszási listában.'
+        success: 'Töröltem **:queueSize** számot a listából, a lista most üres!'
+
+    MoveHereCommand:
+        error: 'Nem vagyok csatlakozva hanghoz, előbb kérj zenét a `{0}play`-vel'
+        nowPlayingIn: 'Jelenleg zenét játszok a **:channelName**-ben'
+
+    MusicChannelCommand:
+        updated: "The **:type** music channel has been successfully been :status"
+        field:
+            title: "Zene Channelek"
+            message: "**Szöveges channel:** :text\n**Hang Channel:** :voice"
+        status:
+            disabled: "letiltva"
+            enabled: "átállítva **{0}**-ra"
+        errors:
+            invalidType: "Érvénytelen típusú zene channel megadva, a típusnak legalább `szöveg` vagy `hang`-nak kell lennie"
+            notValidType: "`{0}` is not a not a valid {1} channel, you must include a valid voice channel you want to use as the music channel."
+
+    PauseCommand:
+        error: 'Nincs semmi amit szünetelni lehetne, előbb kérj zenét a `{0}play`-vel'
+        alreadyPaused: 'A zene már levan szünetelve, használd a `!resume`-t, hogy folytasd.'
+        paused: 'A zeneszám: `leállítva`'
+
+    PlayCommand:
+        addedSong: ':user hozzáadta [:title](:url) a listához. Összesen `:queueSize` szám(ok) vannak előtte.'
+        addedSongsFromPlaylist: ':user hozzáadta :songs számokat a [:title](:url) lejátszási listából. Összesen `:queueSize` szám(ok) vannak előtte.'
+        session:
+            title: 'Találatok erre: {0}'
+            footer: 'Válassz egy zeneszámot így: {0} <szám>'
+
+    PlaylistCommand:
+        noPlaylists: 'Ennek a szervernek még nincs lejátszási listája, csinálhatsz egyet a\n`:command` -el.'
+        noPlaylistWithName: 'Nincs ilyen nevű lejátszási lista: `:playlist`, csinálhatsz egyet a\n`:command` parancsal'
+        invalidProperty: 'Érvénytelen `tulajdonság` megadva, nincs lejátszási lista tulajdonság ezen a néven: `{0}`.\nTöbbet tudhatsz meg: `{1}help {2}`'
+        invalidFormat: 'Érvénytelen formátum, hiányzik a `:type` tulajdonság!\n`:command`'
+        invalidIdGiven: 'Érvénytelen id megadva, a megadott szám túl :type\n`:command`'
+        invalidIdNumberGiven: 'Érvénytelen id megadva, az id-nek számnak kell lennie\n`:command`'
+        noMoreSongSlots: "A `:playlist` lejátszási listában nem maradt több hely."
+        noMorePlaylistSlots: "A szervernek nincs több lejátszási lista helye, törölhetsz meglévő lejátszási listákat, hogy felszabadíts helyet."
+        failedToLoad: 'Sikertelen betöltés: {0}'
+        failedToLoadPlaylist: ':playlist betöltése sikertelen, talán próbáld újra később, vagy jelents ezt a hibát az egyik fejlesztőmnek.'
+        failedToSavePlaylist: 'Valami hiba történt a következő lejátszási lista mentése során: {0}'
+        loadedPlaylist: 'A **:name** lejátszási lista betöltve, és a **:amount** szám sikeresen elindítva.'
+        noMatches: 'Nincs Találat'
+        attemptingToAddLivestreamToPlaylist: "Nem adhatsz élő közvetítést a lejátszási listához!"
+        userHasAddedSong: ':user hozzáadta [:name](:url) a `:playlist` lejátszási listához.\nA `:playlist` lejátszási listában még `:slots` számnak van hely.'
+        alreadyExists: 'A `:playlist` lejátszási lista már létezik!'
+        onlyNumbersInName: "A lejátszási lista nem állhat csak számokból, pár betűt is használnod kell a névben!"
+        renamingPlaylistAlreadyExists: "Nem lehet átnevezni a `:oldplaylist`-t `:playlist`-re, már van egy ilyen nevű lejátszási lista: `:playlist`"
+        playlistCreated: 'A `:playlist` lejátszási lista sikeresen létrehozva!\nElkezdhetsz hozzáadni számokat a `:command :playlist hozzáadás <szám> parancsal.`'
+        playlistDeleted: 'A `:name` lejátszási lista sikeresen törölve!'
+        playlistRenamed: 'A `:oldplaylist` lejátszási lista sikeresen átnevezve `:playlist`-re!'
+        playlistIsEmpty: 'Nincsenek számok a lejátszási listában, hozzá tudsz adni számokat a the\n`:command` parancsal.'
+        playlistIsAlreadyEmpty: 'A `:playlist` lejátszási lista már üres, ezért nincs mit eltávolítani.'
+        songHasBeenRemovedFromPlaylist: ':song sikeresen eltávolítva a `:playlist` lejátszási listából.'
+        playlistTitle: ':musical_note: Lejátszási Lista {0}'
+        playlistSize: '[ {0} out of {1} ]'
+        playlistLine: '{0}\n       Lejátszási listában **{1}** szám(ok) vannak'
+        playlistSongLine: '`{0}` [{1}]({2}) [{3}]'
+    RemoveSongFromQueueCommand:
+        error: 'Hiányzó paraméter `zene száma`, megkell adnod a zene számát amit törölni akarsz a lejátszási listából.'
+        failedToRemoveSong: 'Valami hiva történt, `:index` törlése sikertelen.'
+        tooHighNumberGiven: 'Csak `{0}` zeneszám van a listában, próbáld meg csökkenteni a számod egy kicsit.'
+        mustBePositiveNumber: 'A `zene száma` egy valós pozitív számnak kell lennie.'
+        nothingToRemove: 'Semmi sincs amit törölni lehetne, előbb kérj zenét a `{0}play`-vel'
+        success: ':song sikeresen törölve a lejátszási listából.'
+
+    RepeatMusicQueueCommand:
+        error: 'Semmi sincs amit ismételni lehetne, előbb kérj zenét a `{0}play`-vel'
+        success: 'A zene ismétlés `:status` lett kapcsolva.'
+        enabled: 'BE'
+        disabled: 'KI'
+
+    ResumeCommand:
+        error: 'Nincs semmi amit folytatni lehetne, előbb kérj zenét a `{0}play`-vel'
+        alreadyPlaying: 'A zene már jelenleg is szól, használd `:prefixpause` hogy leszüneteld.'
+        resume: 'A zeneszám `folytatva`'
+
+    SeekCommand:
+        error: 'Semmi sincs játszva most, kérj valamit a `{0}play`-el előbb.'
+        invalidTimeGiven: 'A `szám` paraméternek valós idő formátumnak kell lennie ami legalább 0 vagy több másodperc hosszúságú.'
+        seekingLive: 'Élő adásban nem tudsz különböző időpontokra ugrani.'
+        seekingTooFar: '`{0}` több mint a jelenleg játszott szám hosszasága, ha tovább akarsz ugrani a következő számra használd a `{1}skip`-t inkább.'
+        seekTo: 'Beletekerés **:title**-t `:time`-hez'
+
+    SetDefaultVolumeCommand:
+        currentVolume: 'Az alapértelmezett hangerő a szerveren jelenleg `:volume%`-re van állítva'
+        changedVolume: 'Az alapértelmezett hangerő átállítva `:volume%`-ra'
+        failedToSave: 'Valami hiba történt az alapértelmezett hangerő {0}-re állítása során.'
+        mustBeNumber: 'A `hangerő`-nek 10 és 100 közt kell lennie'
+
+    ShuffleCommand:
+        error: 'A lejátszási lista már üres, kérhetsz valamit a\n`{0}play <szám cím | link>`-el'
+        success: '**:amount** szám összekeverve a lejátszási listában.'
+
+    SkipCommand:
+        error: 'Nincs semmi amit át lehetne ugrani, előbb kérj számot a `{0}play`-el'
+
+    SongCommand:
+        error: 'Semmi sincs amit meg lehetne jeleníteni, előbb kérj számot a `{0}play`-el'
+        paused: 'Jelenleg Szünetelve'
+        playing: 'Jelenleg Játszott'
+        songsInQueue: 'Számok a lejátszási listában'
+        moreSongs: 'Több számot láthatsz a {0} <oldal> használva'
+        noSongs: 'Nincs más szám a lejátszási listában pillanatnyilag'
+        andXMoreSongs: '_és **{0}** további szám{1}!_'
+        formats:
+            line: '**{0}** [{1}]({2})'
+            song: '[{0}]({1})\nLejátszás `{2}` hangerővel, `{3}` maradt hátra a számból - Listához adta: <@{4}>'
+            stream: '[{0}]({1})\nLejátszás `{2}` hangerővel, az élő adás `{3}` - Listához adta: <@{4}>'
+
+    StopCommand:
+        error: "Semmi sem szól jelenleg, nem állíthatod meg a zenét ha semmi sem szól."
+        success: 'Lejátszás megállítva, és **:number** szám törölve a lejátszási listából.'
+
+    VolumeCommand:
+        error: 'Semmi sem szól, előbb kérj számot a `{0}play`-el'
+        requireDJRole: 'A `DJ` rang szükséges, hogy hangerőt válts!'
+        invalidVolume: 'Érvénytelen hangerő kiválasztva, a hangerőnek valós számnak kell lennie 10 és 100 között.'
+        nowPlaying: ':musical_note: Zene szól **:volume** hangerővel'
+        setTo: ':musical_note: Hangerő átállítva **:volume**-re'
+
+    VoteSkipCommand:
+        error: 'Semmi sincs amit át lehetne ugrani, előbb kérj számot a `{0}play`-el'
+        registered: 'A szavazatod regisztrálva! `:votes` további szavazat szükséges, hogy át lehessen ugrani a számot.'
+        alreadyVoted: 'Csak egyszer szavazhatsz átugrásra számonként! `:votes` további szavazat szükséges, hogy át lehessen ugrani a számot.'

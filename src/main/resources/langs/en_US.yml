@@ -1,0 +1,171 @@
+
+errors:
+    missingArgument: 'Missing argument, the `{0}` argument is required!'
+    invalidProperty: 'Invalid `{0}` provided, you must provide a valid {1}.'
+    noChannelsWithNameOrId: 'I found no channels with the name or ID of `{0}`'
+    noUsersWithNameOrId: 'I found no users with the name or ID of `{0}`'
+    mustBeConnectedToVoice: 'You must be connected to a voice channel to use this command!'
+    mustBeConnectedToSameChannel: 'You must be connected to the same voice channel I am in to {0}!'
+    missingMusicQueue: 'Missing music `query`, you must include a link to the song you want to listen to, or at least give me a song title!'
+    requireLevelFeatureToBeEnabled: 'This command requires the `Levels & Experience` feature to be enabled for the server, you can ask a server admin if they want to enable it with `{0}`'
+    errorOccurredWhileLoading: 'An error occurred while loading the {0}, please try again, if the problem continues please report this to one of my developers on the [AvaIre support server](https://discord.gg/gt2FWER).'
+
+help:
+    HelpCommand:
+        listOfCommands: ':page_with_curl: **List of Commands** ```css\n{0}```\n'
+        commandNote: '**Type `:help <command>` to see the help for that specified command.**\nExample: `:help :command`'
+        categoriesNote: ':information_source: Type `:help <category>` to get a list of commands in that category.\nExample: `:help {0}` or `:help {1}`'
+        categoriesTitle: ':scroll: Command Categories'
+        invalidCategory: 'Invalid command category given, there are no categories called `:category`'
+        invalidCommand: 'Invalid command given, there are no command that has the trigger `:trigger`'
+        tryingToViewSystemCommands: "You don't have permissions to run any of the commands in the `System` category, system commands can affect all the servers the bot is currently running on, and thus are limited to bot administrators/developers."
+        singularHiddenCategories: '_There is **{0}** hidden category for this channel._'
+        multipleHiddenCategories: '_There are **{0}** hidden categories for this channel._'
+        fields:
+            usage: 'Usage'
+            example: 'Example'
+            aliases: 'Aliases'
+            seeAlso: 'See Also'
+            footer: 'Command category: '
+
+music:
+    internal:
+        songWasSkipped: '[:title](:url) requested by :author was skipped.'
+        nowPlayingSong: 'Now playing: [:title](:link)\n`:duration` at `:volume%` volume - Requested by :requester'
+        nowPlayingPlaylist: 'The **:playlistName** playlist has been added to the queue with `:playlistSize` tracks!'
+        nowPlaying: 'Now playing: [:title](:link)\n`:duration` at `:volume%` volume - Requested by :requester'
+        queueHasEnded: 'Queue has ended, leaving voice.'
+        noMatchFound: 'I found nothing with the given query: `{0}`'
+        trackLoadFailed: "I couldn't add that to the queue: `{0}`"
+        musicChannel: "You can only use music commands in the :channel channel."
+
+    ClearQueueCommand:
+        error: 'Nothing to clear, request music first with `{0}play`'
+        emptyQueue: 'Nothing to clear, there are no songs pending in the queue right now.'
+        success: 'I have removed **:queueSize** songs from the queue, the queue is now empty!'
+
+    MoveHereCommand:
+        error: 'Not connected to voice, request music first with `{0}play`'
+        nowPlayingIn: 'I am now playing music in **:channelName**'
+
+    MusicChannelCommand:
+        updated: "The **:type** music channel has been successfully been :status"
+        field:
+            title: "Music Channels"
+            message: "**Text Channel:** :text\n**Voice Channel:** :voice"
+        status:
+            disabled: "disabled"
+            enabled: "set to **{0}**"
+        errors:
+            invalidType: "Invalid type of music channel given, the type must be either `text` or `voice`"
+            notValidType: "`{0}` is not a not a valid {1} channel, you must include a valid voice channel you want to use as the music channel."
+
+    PauseCommand:
+        error: 'Nothing to pause, request music first with `{0}play`'
+        alreadyPaused: 'The music is already paused, use `!resume` to resume the music.'
+        paused: 'The music has been `paused`'
+
+    PlayCommand:
+        addedSong: ':user has added [:title](:url) to the queue. There are `:queueSize` song(s) ahead of it in the queue.'
+        addedSongsFromPlaylist: ':user has added :songs songs from the [:title](:url) playlist to the queue. There are `:queueSize` song(s) ahead of it in the queue.'
+        session:
+            title: 'Results for {0}'
+            footer: 'Choose a song with {0} <number>'
+
+    PlaylistCommand:
+        noPlaylists: 'This server does not have any music playlists yet, you can create one with\n`:command` to get started'
+        noPlaylistWithName: 'There are no playlist called `:playlist`, you can create the playlist by using the\n`:command` command'
+        invalidProperty: 'Invalid `property` given, there are no playlist properties called `{0}`.\nYou can learn more by running `{1}help {2}`'
+        invalidFormat: 'Invalid format, missing the `:type` property!\n`:command`'
+        invalidIdGiven: 'Invalid id given, the number given is too :type\n`:command`'
+        invalidIdNumberGiven: 'Invalid id given, the id must be a number\n`:command`'
+        noMoreSongSlots: "The `:playlist` playlist doesn't have any more song slots."
+        noMorePlaylistSlots: "The server doesn't have any more playlist slots, you can delete existing playlists to free up slots."
+        failedToLoad: 'Failed to load: {0}'
+        failedToLoadPlaylist: 'Failed to load the :playlist, maybe try again later or report this to one of my developers.'
+        failedToSavePlaylist: 'Something went wrong while trying to save the playlist: {0}'
+        loadedPlaylist: 'The **:name** playlist has been loaded and added to the queue with **:amount** songs.'
+        noMatches: 'No Matches'
+        attemptingToAddLivestreamToPlaylist: "You can't add livestreams to a playlist!"
+        userHasAddedSong: ':user has added [:name](:url) to the `:playlist` playlist.\nThe `:playlist` playlist has `:slots` more song slots available.'
+        alreadyExists: 'The `:playlist` playlist already exists!'
+        onlyNumbersInName: "The playlist can't only be numbers, you have to include some letters in the name!"
+        renamingPlaylistAlreadyExists: "Can't rename the `:oldplaylist` to `:playlist`, there are already a playlist called `:playlist`"
+        playlistCreated: 'The `:playlist` playlist has been been created successfully!\nYou can start adding songs to it with `:command :playlist add <song>`'
+        playlistDeleted: 'The `:name` playlist has been deleted successfully!'
+        playlistRenamed: 'The `:oldplaylist` playlist has been renamed to `:playlist`!'
+        playlistIsEmpty: 'There are no songs in this playlist, you can add songs to it by using the\n`:command` command.'
+        playlistIsAlreadyEmpty: 'The `:playlist` playlist is already empty, there is nothing to remove.'
+        songHasBeenRemovedFromPlaylist: ':song has been successfully removed from the `:playlist` playlist'
+        playlistTitle: ':musical_note: Music Playlist {0}'
+        playlistSize: '[ {0} out of {1} ]'
+        playlistLine: '{0}\n       Playlist has **{1}** song(s)'
+        playlistSongLine: '`{0}` [{1}]({2}) [{3}]'
+
+    RemoveSongFromQueueCommand:
+        error: 'Missing argument `song id`, you must include the ID of the song you want to remove from the queue.'
+        failedToRemoveSong: 'Something went wrong, failed to remove song at index `:index`'
+        tooHighNumberGiven: 'There are only `{0}` songs in the queue, try lowering your number a bit.'
+        mustBePositiveNumber: 'The `song id` must be a valid positive number.'
+        nothingToRemove: 'Nothing to remove, request music first with `{0}play`'
+        success: ':song has been successfully removed from the music queue.'
+
+    RepeatMusicQueueCommand:
+        error: 'There is nothing to repeat, request music first with `{0}play`'
+        success: 'Music queue looping has been turned `:status`.'
+        enabled: 'ON'
+        disabled: 'OFF'
+
+    ResumeCommand:
+        error: 'Nothing to resume, request music first with `{0}play`'
+        alreadyPlaying: 'The music is already playing, use `:prefixpause` to pause the music first.'
+        resume: 'The music has been `resumed`'
+
+    SeekCommand:
+        error: 'Nothing is playing right now, request something with `{0}play` first.'
+        invalidTimeGiven: 'The `number` argument must be a valid time format that is at least 0 or more seconds long.'
+        seekingLive: 'You can not jump to a different time code for livestreams.'
+        seekingTooFar: '`{0}` is more than the length of the current song playing, if you want to skip to the next song use `{1}skip` instead.'
+        seekTo: 'Seeking **:title** to `:time`'
+
+    SetDefaultVolumeCommand:
+        currentVolume: 'The default volume for the server is currently set to `:volume%`'
+        changedVolume: 'The default volume has been set to `:volume%`'
+        failedToSave: 'Something went wrong while trying to save the default volume: {0}'
+        mustBeNumber: 'The `volume` must be a number between 10 and 100'
+
+    ShuffleCommand:
+        error: 'The music queue is already empty, you can request something with\n`{0}play <song title | url>`'
+        success: '**:amount** songs has been shuffled in the music queue.'
+
+    SkipCommand:
+        error: 'Nothing to skip, request music first with `{0}play`'
+
+    SongCommand:
+        error: 'Nothing to display, request music first with `{0}play`'
+        paused: 'Currently Paused'
+        playing: 'Currently Playing'
+        songsInQueue: 'Songs in Queue'
+        moreSongs: 'You can see more songs by using {0} <page>'
+        noSongs: 'There are no other songs in the queue right now'
+        andXMoreSongs: '_And **{0}** more song{1}!_'
+        formats:
+            line: '**{0}** [{1}]({2})'
+            song: '[{0}]({1})\nPlaying at `{2}` volume with `{3}` left of the song - Requested by <@{4}>'
+            stream: '[{0}]({1})\nPlaying at `{2}` volume, the stream is `{3}` - Requested by <@{4}>'
+
+    StopCommand:
+        error: "Nothing is playing right now, you can't stop the music when nothing is playing."
+        success: 'The player has stopped, and **:number** songs has been removed from the queue.'
+
+    VolumeCommand:
+        error: 'Nothing is playing, request music first with `{0}play`'
+        requireDJRole: 'The `DJ` role is required to change the volume!'
+        invalidVolume: 'Invalid volume given, the volume must be a valid number between 1 and 100.'
+        nowPlaying: ':musical_note: Music is playing at **:volume** volume'
+        setTo: ':musical_note: Volume set to **:volume** volume'
+
+    VoteSkipCommand:
+        error: 'Nothing to skip, request music first with `{0}play`'
+        registered: 'Your vote has been registered! `:votes` more votes needed to skip the song.'
+        alreadyVoted: 'You can only vote skip once per song! `:votes` more votes needed to skip the song.'

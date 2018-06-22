@@ -1,0 +1,171 @@
+
+errors:
+    missingArgument: "Argument manquant, l'argument `{0}` est requis "
+    invalidProperty: "`{0}` invalide, tu dois fournir un {1} valide."
+    noChannelsWithNameOrId: "Je n'ai trouvé aucun channel avec le nom ou l'ID `{0}`"
+    noUsersWithNameOrId: "Je n'ai trouvé aucun utilisateur avec le nom ou ID `{0}`"
+    mustBeConnectedToVoice: "Tu dois être connectés à un channel vocal pour utiliser cette commande!"
+    mustBeConnectedToSameChannel: "Tu dois être connectés au même channel vocal que moi, je suis dans {0}!"
+    missingMusicQueue: "Musique manquante `query`, tu dois inclure lien de la musique que tu souhaites écouter, ou au moins un titre de musique!"
+    requireLevelFeatureToBeEnabled: "Cette commande requiert que la fonctionnalité `Levels & Experience` soit active pour le serveur, tu peux demander à un admin serveur si ils veulent l'activer avec `{0}`"
+    errorOccurredWhileLoading: "Une erreur est survenue lors du chargement de {0}, réessayer, si le problème persiste reportez le à l'un de mes développeurs sur le [serveur de support AvaIre](https://discord.gg/gt2FWER)."
+
+help:
+    HelpCommand:
+        listOfCommands: ":page_with_curl: **Liste des commandes** ```css\n{0}```\n"
+        commandNote: "**Tape `:help <command>` pour afficher l'aide de cette commande spécifique.**\nExemple: `:help :command`"
+        categoriesNote: ":information_source: Tape `:help <category>` pour obtenir la liste des commandes de cette catégorie.\nExemple: `:help {0}` ou `:help {1}`"
+        categoriesTitle: ":scroll: Catégories de commande"
+        invalidCategory: "Catégorie de commande invalide, il n'existe pas de catégorie nommée `:category`"
+        invalidCommand: "Commande invalide, il n'existe pas de commande `:trigger`"
+        tryingToViewSystemCommands: "Vous n'avez la permission d'exécuter aucune commande dans la catégorie `System`, ces commandes peuvent affecter tous les serveurs où le bot est actuellement actif, et sont par conséquent limité aux administrateurs/développeurs du bot."
+        singularHiddenCategories: "_Il existe **{0}** catégorie cachée pour ce canal._"
+        multipleHiddenCategories: "_Il existe **{0}** catégories cachées pour ce canal._"
+        fields:
+            usage: "Usage"
+            example: "Exemple"
+            aliases: "Alias"
+            seeAlso: 'See Also'
+            footer: "Catégorie de commande: "
+
+music:
+    internal:
+        songWasSkipped: "[:title](:url) demandé par :author a été passée."
+        nowPlayingSong: "Joue maintenant: [:title](:link)\n`:duration` au volume `:volume%` - Demandé par :requester"
+        nowPlayingPlaylist: "La playlist **:playlistName** a été ajoutée à la file d'attente avec `:playlistSize` pistes!"
+        nowPlaying: "Joue maintenant: [:title](:link)\n`:duration` au volume `:volume%` - Demandé par :requester"
+        queueHasEnded: "La file d'attente est terminée, je quitte le vocal."
+        noMatchFound: "Je n'ai rien trouvé avec la requête: `{0}`"
+        trackLoadFailed: "Je ne peux pas ajouter cela à la file d'attente: `{0}`"
+        musicChannel: "Vous ne pouvez utiliser que des commandes musicales dans le canal :channel."
+
+    ClearQueueCommand:
+        error: "Rien à vider, demande d'abord une musique avec `{0}play`"
+        emptyQueue: "Rien à vider, aucune musique n'est  actuellement en attente dans la file."
+        success: "J'ai supprimé **:queueSize** musiques de la file d'attente, elle est à présent vide!"
+
+    MoveHereCommand:
+        error: "Je ne suis pas connecté à un canal vocal, demande d'abord une musique avec `{0}play`"
+        nowPlayingIn: "Je diffuse à présent de la musique dans le canal **:channelName**"
+
+    MusicChannelCommand:
+        updated: "Le canal musical **:type** a bien été :status"
+        field:
+            title: "Canals musicaux"
+            message: "**Canal textuel:** :text\n**Canal vocal:** :voice"
+        status:
+            disabled: "désactivé"
+            enabled: "fixé à **{0}**"
+        errors:
+            invalidType: "Type de canal musical invalide, il doit être soit `text` soit `voice`"
+            notValidType: "`{0}` n'est pas un canal valide {1}, tu dois inclure un canal vocal valide que tu souhaites utiliser comme canal musical."
+
+    PauseCommand:
+        error: "Rien à mettre en pause, demande une musique d'abord avec `{0}play`"
+        alreadyPaused: "La musique est déjà en pause, utilise `!resume` pour reprendre la lecture."
+        paused: "La musique a été `mise en pause`"
+
+    PlayCommand:
+        addedSong: ":user a ajouté [:title](:url) à la file d'attente. Il y a `:queueSize` musique(s) avant dans la file."
+        addedSongsFromPlaylist: ":user a ajouté :songs musiques depuis la playlist [:title](:url) à la file d'attente. Il y a `:queueSize` musique(s) avant dans la file."
+        session:
+            title: "Résultat pour {0}"
+            footer: "Sélectionnez une musique avec {0} <nombre>"
+
+    PlaylistCommand:
+        noPlaylists: "Ce serveur n'a pour le moment aucune playlist musicale, tu peux en créer une avec la commande\n`:command`"
+        noPlaylistWithName: "Il n'existe aucune playlist nommée `:playlist`, tu peux en créer une avec la commande\n`:command`"
+        invalidProperty: "`property` invalide, Il n'existe pas de propriété de playlist nommée `{0}`.\nTu peux en apprendre davantage en utilisant `{1}help {2}`"
+        invalidFormat: "Format invalide, la propriété `:type` est manquante!\n`:command`"
+        invalidIdGiven: "Id invalide, le nombre fourni est trop :type\n`:command`"
+        invalidIdNumberGiven: "Id invalide, l'id doit être un nombre\n`:command`"
+        noMoreSongSlots: "La playlist `:playlist` n'a plus de place pour davantage de musique."
+        noMorePlaylistSlots: "Le serveur n'a plus de place pour davatange de playlist, tu peux supprimer des playlists existantes pour libérer de l'espace."
+        failedToLoad: "Échec de chargement: {0}"
+        failedToLoadPlaylist: "Échec du chargement de :playlist, essaye plus tard ou reporte ce problème à l'un de mes développeurs."
+        failedToSavePlaylist: "Quelque chose s'est mal passé en essayant d'enregistrer la playlist: {0}"
+        loadedPlaylist: "La playlist **:name** a été chargée et ajoutée à la file avec **:amount** musiques."
+        noMatches: "Aucun résultat"
+        attemptingToAddLivestreamToPlaylist: "Tu ne peux pas ajouter de diffusion en direct à une playlist!"
+        userHasAddedSong: ":user a ajouté [:name](:url) à la playlist `:playlist` \nLa playlist `:playlist` a encore `:slots` emplacemements de musiques disponibles."
+        alreadyExists: "La playlist `:playlist` existe déjà!"
+        onlyNumbersInName: "Le nom de la playlist ne peut pas uniquement contenir des nombres, tu dois y inclure des lettres!"
+        renamingPlaylistAlreadyExists: "Impossible de renommer `:oldplaylist` en `:playlist`, une playlist est déjà nommée `:playlist`"
+        playlistCreated: "La playlist `:playlist` a été créée avec succès!\nTu peux commencer à y ajouter des musiques avec `:command :playlist add <musique>`"
+        playlistDeleted: "La playlist `:name` a été supprimée avec succès!"
+        playlistRenamed: "La playlist `:oldplaylist` a été renommée en `:playlist`!"
+        playlistIsEmpty: "Il n'y a aucune musique dans cette playlist, tu peux ajouter des musiques en utilisant la commande\n`:command`."
+        playlistIsAlreadyEmpty: "La playlist `:playlist` est déjà vide, Il n'y a rien à supprimer."
+        songHasBeenRemovedFromPlaylist: ":song a été supprimée avec succès de la playlist `:playlist`"
+        playlistTitle: ":musical_note: Playlist Musicale {0}"
+        playlistSize: "[ {0} sur {1} ]"
+        playlistLine: "{0}\n       La Playlist contient **{1}** musique(s)"
+        playlistSongLine: "`{0}` [{1}]({2}) [{3}]"
+
+    RemoveSongFromQueueCommand:
+        error: "Argument manquant `song id`, tu dois inclure l'ID de la musique que tu veux retirer de la file d'attente."
+        failedToRemoveSong: "Quelque chose s'est mal passé, échec lors de la suppression de la musique à l'indice `:index`"
+        tooHighNumberGiven: "Il y a seulement `{0}` musique(s) dans la file d'attente, essaye de donner un nombre plus petit."
+        mustBePositiveNumber: "Le `song id` doit être un entier positif valide."
+        nothingToRemove: "Rien à supprimer, demande un musique d'abord avec `{0}play`"
+        success: ":song supprimée avec succès de la file d'attente."
+
+    RepeatMusicQueueCommand:
+        error: "Il n'y a rien à répéter, demande un musique d'abord avec `{0}play`"
+        success: "La lecture en boucle de la file d'attente musicale est maintenant sur le status `:status`."
+        enabled: "ON"
+        disabled: "OFF"
+
+    ResumeCommand:
+        error: "Rien à reprendre, demande une musique d'abord avec `{0}play`"
+        alreadyPlaying: "La musique est déjà en cours de lecture, utilise `:prefixpause` pour mettre la lecture en pause."
+        resume: "La musique a `repris`"
+
+    SeekCommand:
+        error: "Rien n'est en cours de lecture pour le moment, demande d'abord quelque chose avec `{0}play`."
+        invalidTimeGiven: "L'argument `number` doit être un format de temps valide qui est égal ou supérieur à 0 secondes."
+        seekingLive: "Tu ne peux pas aller à un instant différent pour les diffusions en direct."
+        seekingTooFar: "`{0}` est plus grand que la durée de la musique courante, si tu veux passer à la prochaine musique utilise plutôt `{1}skip`."
+        seekTo: "Recherche **:title** à `:time`"
+
+    SetDefaultVolumeCommand:
+        currentVolume: "Le volume par défaut pour le serveur est actuellement fixé à `:volume%`"
+        changedVolume: "Le volume par défaut a été fixé à `:volume%`"
+        failedToSave: "Quelque chose s'est mal passé lors de l'enregistrement du volume par défaut: {0}"
+        mustBeNumber: "Le `volume` doit être un nombre entre 10 et 100"
+
+    ShuffleCommand:
+        error: "La file musicale est déjà vide, tu peux demander quelque chose avec\n`{0}play <titre | url>`"
+        success: "**:amount** musiques ont été mélangées dans la file musicale."
+
+    SkipCommand:
+        error: "Rien à passer, demande un musique d'abord avec `{0}play`"
+
+    SongCommand:
+        error: "Rien à afficher, demande un musique d'abord avec `{0}play`"
+        paused: "Actuellement en pause"
+        playing: "Actuellement en lecture"
+        songsInQueue: "Musiques en attente"
+        moreSongs: "Tu peux voir davantage de musiques avec {0} <page>"
+        noSongs: "Il n'y aucune autre musique dans la file actuellement"
+        andXMoreSongs: "_Et **{0}** autres song{1}!_"
+        formats:
+            line: "**{0}** [{1}]({2})"
+            song: "[{0}]({1})\nLecture au volume `{2}` avec `{3}` musiques restantes - Demandé par <@{4}>"
+            stream: "[{0}]({1})\nLecture au volume `{2}`, la diffusion `{3}` - Demandé par <@{4}>"
+
+    StopCommand:
+        error: "Aucune lecture en cours, tu ne peux pas arrêter la musique s'il n'y en a pas."
+        success: "La lecture est interrompue, et **:number** musiques ont été supprimées de la file."
+
+    VolumeCommand:
+        error: "Rien n'est en cours de lecture, demande un musique d'abord avec `{0}play`"
+        requireDJRole: "Le rôle `DJ` est requis pour changer le volume!"
+        invalidVolume: "Volume invalide, il doit être compris entre 1 et 100."
+        nowPlaying: ":musical_note: La musique est jouée au volume **:volume**"
+        setTo: ":musical_note: Volume fixé à **:volume**"
+
+    VoteSkipCommand:
+        error: "Rien à passer, demande un musique d'abord avec `{0}play`"
+        registered: "Ton vote est enregistré! Il manque `:votes` votes pour passer la musique."
+        alreadyVoted: "Tu ne peux voter qu'une fois pour passer une même musique! Il manque `:votes` pour passer la musique."
