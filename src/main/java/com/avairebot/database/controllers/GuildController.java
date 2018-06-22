@@ -23,7 +23,7 @@ public class GuildController {
         .build();
 
     private static final String[] REQUIRED_GUILD_ITEMS = new String[]{
-        "guild_types.name as type_name", "guild_types.limits as type_limits", "guilds.id", "guilds.name", "guilds.icon", "guilds.local",
+        "guild_types.name as type_name", "guild_types.limits as type_limits", "guilds.id", "guilds.name", "guilds.icon", "guilds.locale",
         "guilds.default_volume", "guilds.dj_level", "guilds.music_channel_text", "guilds.music_channel_voice"
     };
 

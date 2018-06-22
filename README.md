@@ -14,6 +14,7 @@ Want to see the full version? Check it out at [avaire/avaire](https://github.com
 
 - Music streaming from YouTube, SoundCloud, Twitch, Bandcamp, and Vimeo.
 - Supports raw audio links with the following formats: mp3, flac, wav, webm, mp4, ogg, acc, m3u, pls.
+- Multi language support, currently supports English, German, French, Hungarian, and Norwegian, with more to come.
 - Create custom playlists through the bot that you can play at anytime.
 - Set a default volume so the bot will always play at that volume when it first joins.
 - Setup music text and voice channels to limit where the bot will work.

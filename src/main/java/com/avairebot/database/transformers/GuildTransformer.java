@@ -39,7 +39,7 @@ public class GuildTransformer extends Transformer {
             id = data.getString("id");
             name = data.getString("name");
             nameRaw = data.get("name").toString();
-            locale = data.getString("local");
+            locale = data.getString("locale");
 
             musicChannelText = data.getString("music_channel_text");
             musicChannelVoice = data.getString("music_channel_voice");

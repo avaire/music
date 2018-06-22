@@ -23,7 +23,7 @@ public class CreateGuildTableMigration implements Migration {
             table.Text("name");
 
             table.String("icon").nullable();
-            table.String("local", 12).nullable();
+            table.String("locale", 12).nullable();
             table.String("level_channel").nullable();
             table.String("music_channel_text").nullable();
             table.String("music_channel_voice").nullable();
